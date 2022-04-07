@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { HomeComponent } from './home/home.component';\nimport { ListHouseComponent } from './list-house/list-house.component';\nexport const routes = [{\n  path: 'home',\n  component: HomeComponent\n}, {\n  path: 's',\n  component: ListHouseComponent\n}];","map":null,"metadata":{},"sourceType":"module"}

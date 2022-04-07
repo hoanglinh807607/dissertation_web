@@ -1,0 +1,36 @@
+@import './base/_variables.scss';
+@import '../../styles.scss';
+
+@font-face {
+  font-family: 'eurostile';
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'gilroy';
+  height: 100%;
+}
+
+.color-green {
+  color: $main-color;
+}
+
+.f-24 {
+  font-size: 24px;
+}
+
+.f-26 {
+  font-size: 26px;
+}
+
+.f-36 {
+  font-size: 36px;
+}
+
+.f-60 {
+  font-size: 60px;
+}

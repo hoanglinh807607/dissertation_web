@@ -1,0 +1,33 @@
+@import "./src/assets/css/base/variables";
+.account {
+  padding: .975rem;
+  background: #fff;
+  box-shadow: 0 9px 46px 8px rgb(0 0 0 / 2%), 0 24px 38px 3px rgb(0 0 0 / 4%), 0 11px 15px -7px rgb(0 0 0 / 5%);
+  border-radius: .625rem;
+  margin-top: -2.25rem;
+
+  a {
+    color: #222;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+  mat-icon {
+    color: #a3a3a3;
+  }
+}
+
+@media (min-width: 768px) {
+  .account {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .account {
+    margin-top: -6.875rem;
+  }
+}

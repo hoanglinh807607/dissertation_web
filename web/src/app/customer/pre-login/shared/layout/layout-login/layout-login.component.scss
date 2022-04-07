@@ -1,0 +1,41 @@
+@import "./src/assets/css/base/variables";
+.welcome {
+  padding: 3rem 0;
+  background: linear-gradient(90deg, $main-color-hover 0,$main-color 51%, $main-color-hover);
+  color: $color-white;
+  height: 100%;
+
+}
+section {
+  .last-xs {
+    -ms-order: 2;
+    order: 2;
+  }
+  .media-login {
+    margin-top: 3rem;
+
+    img {
+      border-style: none;
+      max-width: 100%;
+      vertical-align: middle;
+      height: auto;
+    }
+    .media__title {
+      margin: 1.5rem 0 .875rem;
+      font-size: 1.125rem;
+    }
+    .media__content {
+      color: #555;
+    }
+  }
+
+}
+
+@media (min-width: 992px) {
+  section {
+    .first-md {
+      -ms-order: 1;
+      order: 1;
+    }
+  }
+}

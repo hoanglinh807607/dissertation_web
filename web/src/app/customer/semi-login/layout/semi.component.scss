@@ -1,0 +1,45 @@
+@import "./src/assets/css/base/variables";
+.menu-mobile {
+  padding: 10px 20px;
+  .close {
+    .icon-clear {
+      font-size: 40px;
+      color: $color-black;
+      cursor: pointer;
+    }
+  }
+  .profile {
+    background-color: $color-white;
+    border-radius: 30px;
+    padding: 5px 10px;
+  }
+  ul {
+    padding: 0;
+    >li {
+      list-style: none;
+      padding: 15px 0;
+      font-size: 20px;
+      cursor: pointer;
+      a {
+        color: $color-white;
+        &:hover {
+          color: $main-color-hover;
+        }
+      }
+      &:last-child:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+mat-sidenav-container {
+  height: 100%;
+}
+mat-sidenav {
+  background: linear-gradient(45deg, $main-color-hover 0,$main-color 51%, $main-color-hover);;
+  width: 300px;
+  padding: 16px;
+}
+.display-content {
+  margin-top: 108px;
+}

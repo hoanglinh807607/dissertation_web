@@ -1,0 +1,231 @@
+@import "../../../../assets/css/base/variables";
+.container-nav {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    border-bottom: 1px solid #f2f2f2;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 6;
+    background-color: $color-white-background;
+    padding: 0.5rem 3% 1.5rem;
+
+    .logo {
+      display: flex;
+      justify-content: left;
+      cursor: pointer;
+      a {
+        display: flex;
+        position: relative;
+        left: -20px;
+        font-weight: 700;
+      }
+      img {
+        width: 7rem;
+      }
+      span {
+        position: relative;
+        bottom: -20px;
+        left: -10px;
+        color: $main-color;
+        font-size: 30px;
+      }
+    }
+    .search-box {
+      box-shadow: 1px 1px 2px 3px $color-white-background;
+      background-color: $color-white;
+      border-radius: 5px;
+      height: 46px;
+      position: relative;
+      width: 70%;
+      top: 5px;
+      ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        li {
+          list-style: none;
+          padding: 0 10px;
+          height: 46px;
+          font-size: 18px;
+          &:first-child {
+            padding: 0;
+            width: 100%;
+
+            input {
+              width: 90%;
+            }
+          }
+          &:last-child::before {
+            content: "";
+            position: absolute;
+            border-left: 1px solid $color-block-bottom;
+            font-size: 28px;
+            top: 1px;
+            left: -10px;
+
+          }
+        }
+      }
+      .btn-search {
+        background-color: $main-color;
+        height: 36px;
+        width: 50px;
+        position: absolute;
+        padding-left: 10px;
+        right: 2%;
+        top: 9%;
+        mat-icon {
+          color: $color-white;
+          top: 0px;
+        }
+      }
+      .search-field {
+        input {
+          border: none;
+          border-radius: 5px;
+          font-size: 21px;
+          padding: 6px 9px;
+          width: 300px;
+          &:focus {
+            border: yellow;
+          }
+        }
+      }
+      .customer-number {
+        font-size: 18px;
+        position: relative;
+        top: 1px;
+        left: -3px;
+        color: #495057;
+      }
+      mat-icon {
+        position: relative;
+        top: 6px;
+        color: #495057;
+      }
+    }
+    .menu-mobile {
+      padding: 23px 0 10px 20px;
+      cursor: pointer;
+      color: $color-black;
+
+      &:hover {
+        color: $main-color-hover;
+      }
+    }
+  }
+  .background-login {
+    background-color: $color-black;
+    .menu {
+      >ul{
+        >li{
+          &:hover {
+            color: $color-white;
+          }
+          &:last-child:hover {
+            color: $main-color-hover;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .menu-mobile {
+      color: $color-white;
+    }
+  }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media (min-width: 992px) {
+  .container-nav {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f2f2f2;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 6;
+      background-color: $color-white-background;
+      padding: 0.5rem 3% 1.5rem;
+      .logo {
+        width: 40%;
+      }
+      .menu {
+        ul {
+          display: flex;
+          position: relative;
+          top: 5px;
+          list-style: none;
+          margin: 0;
+          >li {
+            margin-left: 35px;
+            line-height: 50px;
+            padding-top: 10px;
+            cursor: pointer;
+            a {
+              color: $color-black;
+              font-weight: 700;
+              &:hover {
+                color: $main-color-hover;
+              }
+            }
+            &:first-child {
+              margin-left: 0;
+            }
+            &:last-child {
+              position: relative;
+              top: -5px;
+            }
+            &:hover {
+              color: $main-color-hover;
+            }
+          }
+        }
+      }
+      .profile {
+        background-color: $color-input-style-border;
+        border-radius: 30px;
+        padding: 0 10px;
+
+        img{
+          margin-bottom: 4px;
+        }
+        .dropdown-profile {
+          margin-bottom: 6px;
+        }
+      }
+      .search-box {
+        width: 100% !important;
+        margin-left: 10px;
+        position: relative;
+        top: 20px;
+        .search-field {
+          margin-right: 15px;
+        }
+      }
+    }
+    .background-login {
+      background-color: $color-black;
+      .menu {
+        >ul{
+          >li{
+            a {
+              color: $color-white;
+              &:hover {
+                color: $main-color-hover;
+              }
+            }
+            &:last-child {
+              color: $color-black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

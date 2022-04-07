@@ -1,0 +1,96 @@
+<div class="account">
+  <form autocomplete="off">
+    <h3 class="account__title">Đăng ký thành viên</h3>
+    <div>
+      <div class="input-group__icon is-relative">
+        <div class="input-group is-block">
+          <div class="update-phone">
+            <label class="input-group__label bold is-block">Địa chỉ email</label>
+            <div class="input-group__icon is-relative">
+              <input name="emailAddress" type="email" placeholder="Địa chỉ email" class="input mt--0" aria-required="true" aria-invalid="false">
+              <span class="is-absolute input-icon">
+                <mat-icon>mail_outline</mat-icon>
+              </span>
+              <span><!----> <!----></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group is-block">
+          <div class="update-phone">
+            <label class="input-group__label bold is-block">Số điện thoại</label>
+            <div class="input-group__icon is-relative">
+              <input type="text" name="phoneNumber" minlength="10" maxlength="10"  class="input mt--0" placeholder="Số điện thoại" data-vv-as="Số điện thoại" aria-required="true" aria-invalid="false">
+              <span class="is-absolute input-icon">
+                <mat-icon> phone</mat-icon>
+              </span>
+            </div>
+            <span><!----> <!----></span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-group__label bold is-block">Tên</label>
+          <input name="first_name" type="text" class="input" aria-required="true" aria-invalid="false">
+          <span><!----> <!----></span>
+        </div>
+        <div class="input-group">
+          <label class="input-group__label bold is-block">Họ và tên đệm</label>
+          <input name="last_name" type="text" class="input" aria-required="true" aria-invalid="false">
+          <span><!----> <!----></span>
+        </div>
+        <div class="mb--18">
+          <div class="input-group is-block">
+            <label class="input-group__label is-block">
+              <span class="bold">Mật khẩu</span>
+              <span class="c-gray-9"> (Tối thiểu 8 ký tự)</span>
+            </label>
+            <div class="input-group__icon is-relative">
+              <input name="password" type="password" placeholder="Mật khẩu" autocomplete="password" class="input" aria-required="true" aria-invalid="false">
+              <span class="is-absolute input-icon">
+                <mat-icon>lock_open</mat-icon>
+              </span>
+              <span><!----> <!----></span>
+            </div>
+          </div>
+          <div class="input-group is-block">
+            <label class="input-group__label is-block">
+              <span class="bold">Xác nhận mật khẩu mới</span>
+            </label>
+            <div class="input-group__icon is-relative">
+              <input name="new_password_confirm" placeholder="Xác nhận mật khẩu mới" type="password" class="input" aria-required="false" aria-invalid="false">
+              <span class="is-absolute input-icon">
+                <mat-icon>lock_open</mat-icon>
+              </span>
+              <span><!----> <!----></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="account__body">
+      <button type="submit" class="account__btn btn btn-grad--primary btn--shadow btn--md btn--radius btn--full bold">Đăng ký</button>
+      <div class="center-xs">
+        Bạn đã có tài khoản Homestay?
+        <span class="color-m bold" style="cursor: pointer;"><a routerLink="/app/auth/login">Đăng nhập</a></span>
+      </div>
+      <div class="caption center-xs">
+        Tôi đồng ý với
+        <a href="/vi/privacy-policy" target="_blank" rel="noopener" class="bold">Bảo mật</a> và
+        <a href="/vi/tos" rel="noopener" target="_blank" class="bold">Điều khoản hoạt động</a> của Homestay.
+      </div>
+      <div class="account__3rd">
+        <div>
+          <div class="btn btn-outline--secondary btn--md btn--radius btn--full is-relative">
+            <span>Đăng nhập với Facebook</span>
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="mt-2">
+          <div id="g-signin-btn" class="btn btn-outline--secondary btn--md btn--radius btn--full is-relative">
+            <span>Đăng nhập với Google</span>
+            <i class="fa fa-google" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="account">
+  <div>
+    <h3 class="account__title">Đăng nhập</h3>
+    <div class="input-group">
+      <label class="input-group__label bold is-block">Đăng nhập Homestay để trải nghiệm</label>
+    </div>
+    <form class="account__body">
+      <div class="input-group__icon is-relative">
+        <input name="emailAddress" placeholder="Địa chỉ email" autocomplete="emailAddress" type="email" id="emailAddress"class="input" aria-required="true" aria-invalid="false">
+        <span class="is-absolute input-icon">
+          <mat-icon>mail_outline</mat-icon>
+        </span>
+        <span><!----> <!----></span>
+        <span><!----> <!----></span>
+      </div>
+      <div class="input-group__icon is-relative">
+        <input name="password" type="password" placeholder="Mật khẩu" autocomplete="password" class="input" aria-required="true" aria-invalid="false">
+        <span class="is-absolute input-icon">
+          <mat-icon>lock_open</mat-icon>
+        </span>
+        <span><!----> <!----></span>
+        <span><!----> <!----></span>
+      </div>
+      <button type="submit" class="account__btn btn btn-grad--primary btn--shadow btn--md btn--radius btn--full bold">Đăng nhập</button>
+      <div class="center-xs">
+        <div>Quên mật khẩu?
+          <a routerLink="/app/auth/recovery-password" class="color-m bold">
+            Nhấn vào đây
+          </a>
+        </div>
+        <div class="mt--30">Bạn chưa có tài khoản Homestay?
+          <span class="color-m bold" class="cursor-pointer"><a routerLink="/app/auth/register" class="bold">Đăng ký</a></span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
