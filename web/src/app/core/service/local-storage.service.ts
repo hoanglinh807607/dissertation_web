@@ -35,6 +35,32 @@ export class LocalStorageService {
     return new LocationSearching().deserialize(locationsearching);
   }
 
+  getListPictureUrl(): string[] {
+    const pictures = JSON.parse(<string>localStorage.getItem('pictures'));
+    return pictures ?? [];
+  }
+
+  setListPictureUrls(pictures: string[]) {
+    localStorage.setItem('pictures', JSON.stringify(pictures));
+  }
+
+  removeListPictureUrls() {
+    localStorage.removeItem('pictures');
+  }
+
+  getPicture(): string {
+    const picture = localStorage.getItem('picture');
+    return picture ?? '';
+  }
+
+  setPicture(picture: string) {
+    localStorage.setItem('picture', picture);
+  }
+
+  returnPicture() {
+    localStorage.removeItem('picture');
+  }
+
   setLoginInfo(loginInfo: UserModel) {
     localStorage.setItem('loginInfo', JSON.stringify(loginInfo));
   }

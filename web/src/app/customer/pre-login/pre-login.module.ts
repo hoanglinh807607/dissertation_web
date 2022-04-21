@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {routes} from './pre-login.routes';
-import {SharedModule} from '../share/shared.module';
+import {ShareModule} from '../share/shared.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
@@ -14,6 +14,7 @@ import {RegisterComponent} from './register/register.component';
 import {LayoutLoginComponent} from './shared/layout/layout-login/layout-login.component';
 import {LoginComponent} from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const material = [
   MatSidenavModule,
@@ -38,7 +39,9 @@ const material = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ShareModule,
     material
   ]
 })

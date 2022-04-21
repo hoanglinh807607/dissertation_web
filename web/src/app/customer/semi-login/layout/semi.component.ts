@@ -3,7 +3,7 @@ import {MatSidenav} from '@angular/material/sidenav';
 import {Router} from '@angular/router';
 
 export interface MenuProfile {
-  path?: string;
+  path: string;
   icon: string;
   name?: string;
 }

@@ -1,20 +1,11 @@
 <div class="container-nav">
-  <div class="header" [class.background-login]="isLogin">
+  <div class="header">
     <div class="logo">
       <a routerLink="/app/home">
         <img src="/assets/image/logo.png" alt="logo">
-        <span class="strong" *ngIf="isUrlLogin">HOMESTAY</span>
       </a>
-      <div class="search-box hidden-md" *ngIf="!isUrlLogin">
-        <ul>
-          <li class="search-field">
-            <input type="text" placeholder="Tìm kiếm" class="form-control">
-          </li>
-          <li><button class="btn btn-search"><mat-icon>search</mat-icon></button></li>
-        </ul>
-      </div>
     </div>
-    <div class="search-box hidden-lg" *ngIf="!isUrlLogin">
+    <div class="search-box" *ngIf="!isUrlLogin">
       <ul>
         <li class="search-field">
           <input type="text" placeholder="Tìm kiếm" class="form-control">
@@ -34,7 +25,7 @@
           <div class="profile" *ngIf="isLogin">
 <!--                <img style="border-radius: 50%;"  class="mr-2" [src]="user.profilePicture ? user.profilePicture : 'assets/images/no_avatar.png'" width="64" height="64" alt="avatar" />-->
             <img style="border-radius: 50%" class="mr-2" [src]="profilePicture ? profilePicture : '/assets/images/login/no_avatar.png'" width="40" height="40" alt="avatar" />
-            <button class="p-0 dropdown-profile" mat-button [matMenuTriggerFor]="menu">
+            <button class="dropdown-profile btn-profile" mat-button [matMenuTriggerFor]="menu">
               <div class="d-inline-block">
                 <div class="username">Nguyễn Hoàng Linh</div>
               </div>

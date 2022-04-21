@@ -1,1 +1,46 @@
-<p>layout-post-login works!</p>
+<div class="layout-component">
+  <header>
+    <div class="header-body">
+      <div class="header-left">
+        <div class="logo">
+          <a routerLink="/admin/dashboard">
+            <img src="/assets/images/login/logo-admin.png" alt="logo">
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="profile">
+          <!--                <img style="border-radius: 50%;"  class="mr-2" [src]="user.profilePicture ? user.profilePicture : 'assets/images/no_avatar.png'" width="64" height="64" alt="avatar" />-->
+          <button class="dropdown-profile btn-profile" mat-button [matMenuTriggerFor]="menu">
+            <img style="border-radius: 50%" class="mr-2" [src]="profilePicture ? profilePicture : '/assets/images/login/no_avatar.png'" width="40" height="40" alt="avatar" />
+            <span class="d-inline-block">
+            <span class="welcom-back">Chào mừng trở lại,<br/></span>
+            <span>Nguyễn Hoàng Linh</span>
+          </span>
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="right-menu-action">
+            <button (click)="navigateUrl('profile')" mat-menu-item>
+              <mat-icon>work_outline</mat-icon>
+              <span>Cài đặt thông tin</span>
+            </button>
+            <button (click)="navigateUrl('profile')" mat-menu-item>
+              <mat-icon>power_settings_new</mat-icon>
+              <span>Đăng xuất</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+  <footer class="text-align-center">
+    <div>© 2022 Luxurystay All Rights Reserved</div>
+  </footer>
+</div>
+<ngx-spinner bdOpacity="0.5" bdColor="rgba(255,255,255,0.5)" size="default" color="#01A9CE" type="ball-spin-clockwise"
+             [fullScreen]="true">
+  <p id="loading-text">Loading...</p>
+</ngx-spinner>

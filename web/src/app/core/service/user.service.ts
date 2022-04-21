@@ -4,11 +4,13 @@ import {UrlAPI} from '../../shared/helper/constants';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {BaseService} from './base.service';
 import {UserRequestParams} from '../../utils/PagingRequest';
-import {Observable} from 'rxjs';
+import {Observable, of, switchMap, timer} from 'rxjs';
 import {BaseResponse} from "../../api/baseResponse";
 import {UserModel} from "../models/userModel";
 import {GeneralApiResponse} from "../../api/GeneralApiResponse";
 import {CustomHttpParamEncoder} from "../../api/CustomHttpParamEncoder";
+import {AbstractControl, ValidationErrors} from "@angular/forms";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +65,13 @@ export class UserService extends BaseService {
       .set('currentPassword', currentPassword)
       .set('newPassword', newPassword);
     return this.doPost(apiUrl, param);
+  }
+
+  validateUsername(username: string): Observable<boolean> {
+    const apiUrl = UrlAPI.validateUsername;
+    const param = new HttpParams({ encoder: new CustomHttpParamEncoder() })
+      .set('emailAddress', username);
+    return this.doPost(apiUrl, param, 'authentication');
   }
 
 }

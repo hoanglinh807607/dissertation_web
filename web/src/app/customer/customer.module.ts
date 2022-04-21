@@ -5,9 +5,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {AgmCoreModule} from '@agm/core';
 import {Constants} from '../shared/helper/constants';
 import {MatDialogModule} from '@angular/material/dialog';
-import {SharedModule} from './share/shared.module';
-import {PreLoginModule} from './pre-login/pre-login.module';
 import {HoverNavLoginDirective} from './directive/hover-nav-login.directive';
+import {ShareModule} from "./share/shared.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +21,7 @@ import {HoverNavLoginDirective} from './directive/hover-nav-login.directive';
       libraries: ['places']
     }),
     MatDialogModule,
-    SharedModule
+    ShareModule
   ]
 })
 export class CustomerModule { }

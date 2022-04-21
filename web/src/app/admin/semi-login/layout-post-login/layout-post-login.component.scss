@@ -1,0 +1,76 @@
+@import "./src/assets/css/base/variables";
+.layout-component {
+  header {
+    height: 90px;
+  }
+  .header-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: $main-color;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.6);
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+  }
+  .header-left {
+    .logo {
+      a {
+        display: flex;
+        position: relative;
+        font-weight: 700;
+        width: 290px;
+        height: 90px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .header-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile {
+      background-color: $color-white;
+      border-radius: 30px;
+      width: 240px;
+      max-height: 55px;
+      cursor: pointer;
+
+      img{
+        border-radius: 50%;
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+      }
+      .dropdown-profile {
+        padding-left: 50px;
+
+        mat-icon {
+         position: relative;
+          top: -3px;
+        }
+        span {
+          font-weight: 500;
+          .welcom-back {
+            color: rgba(106, 105, 105, 0.6);
+          }
+        }
+      }
+      .btn-profile {
+        position: relative;
+        width: 100%;
+        height: 55px;
+        border-radius: 50px;
+        border: none;
+      }
+    }
+  }
+  footer {
+    padding: 15px 0;
+    background-color: rgba(0,0,0,0.01);
+  }
+}

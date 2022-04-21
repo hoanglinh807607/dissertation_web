@@ -10,7 +10,7 @@ import {MenuProfile} from '../layout/semi.component';
 })
 export class HeaderComponent implements OnInit {
 
-  isLogin = false;
+  isLogin = true;
   isUrlLogin = false;
   @ViewChild('modalMenu') private modalMenu: TemplateRef<any>;
   @Input() drawer: MatSidenav;
@@ -22,14 +22,16 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    if (this.router.url === "/app/auth/login") this.isUrlLogin = true;
+    this.router.url === "/app/auth/login" ? this.isLogin = true : this.isLogin = false;
   }
 
   openDialogMenu() {
     this.drawer.toggle();
   }
 
-  navigateUrl(url: string | undefined) {
-    this.router.navigate([url]);
+  navigateUrl(url: string) {
+    if (url) {
+      this.router.navigate([url]);
+    }
   }
 }

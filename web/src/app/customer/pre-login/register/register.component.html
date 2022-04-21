@@ -1,17 +1,23 @@
 <div class="account">
-  <form autocomplete="off">
+  <form autocomplete="off" [formGroup]="formGroup" (ngSubmit)="formSubmit$.next('')">
     <h3 class="account__title">Đăng ký thành viên</h3>
     <div>
       <div class="input-group__icon is-relative">
         <div class="input-group is-block">
-          <div class="update-phone">
+          <div class="update-email">
             <label class="input-group__label bold is-block">Địa chỉ email</label>
             <div class="input-group__icon is-relative">
-              <input name="emailAddress" type="email" placeholder="Địa chỉ email" class="input mt--0" aria-required="true" aria-invalid="false">
+              <input formControlName="emailAddress" type="email" placeholder="Địa chỉ email" class="input mt--0" aria-required="true" aria-invalid="false">
               <span class="is-absolute input-icon">
                 <mat-icon>mail_outline</mat-icon>
               </span>
               <span><!----> <!----></span>
+            </div>
+            <div class="field-error" *ngIf="validateControl('emailAddress') && !formGroup.controls.emailAddress.errors?.usernameDuplicated">
+              Email chưa hợp lệ.
+            </div>
+            <div class="field-error" *ngIf="formGroup.controls.emailAddress.errors?.usernameDuplicated">
+              Email đã bị trùng.
             </div>
           </div>
         </div>
@@ -19,23 +25,26 @@
           <div class="update-phone">
             <label class="input-group__label bold is-block">Số điện thoại</label>
             <div class="input-group__icon is-relative">
-              <input type="text" name="phoneNumber" minlength="10" maxlength="10"  class="input mt--0" placeholder="Số điện thoại" data-vv-as="Số điện thoại" aria-required="true" aria-invalid="false">
+              <input type="text" formControlName="phoneNumber" NumberOnly minlength="10" maxlength="10"  class="input mt--0" placeholder="Số điện thoại" data-vv-as="Số điện thoại" aria-required="true" aria-invalid="false">
               <span class="is-absolute input-icon">
                 <mat-icon> phone</mat-icon>
               </span>
             </div>
             <span><!----> <!----></span>
           </div>
+          <div class="field-error" *ngIf="validateControl('phoneNumber')">
+            Số điện thoại chưa hợp lệ.
+          </div>
         </div>
-        <div class="input-group">
-          <label class="input-group__label bold is-block">Tên</label>
-          <input name="first_name" type="text" class="input" aria-required="true" aria-invalid="false">
-          <span><!----> <!----></span>
-        </div>
-        <div class="input-group">
-          <label class="input-group__label bold is-block">Họ và tên đệm</label>
-          <input name="last_name" type="text" class="input" aria-required="true" aria-invalid="false">
-          <span><!----> <!----></span>
+        <div class="input-group is-block">
+          <label class="input-group__label bold is-block">Họ và tên</label>
+          <div class="input-group__icon is-relative">
+            <input formControlName="fullName" type="text" class="input" aria-required="true" aria-invalid="false" placeholder="Họ và tên">
+            <span><!----> <!----></span>
+          </div>
+          <div class="field-error" *ngIf="validateControl('fullName')">
+            Họ và tên chưa hợp lệ.
+          </div>
         </div>
         <div class="mb--18">
           <div class="input-group is-block">
@@ -44,11 +53,14 @@
               <span class="c-gray-9"> (Tối thiểu 8 ký tự)</span>
             </label>
             <div class="input-group__icon is-relative">
-              <input name="password" type="password" placeholder="Mật khẩu" autocomplete="password" class="input" aria-required="true" aria-invalid="false">
-              <span class="is-absolute input-icon">
-                <mat-icon>lock_open</mat-icon>
+              <input formControlName="password" type="{{ isShowPassword ? 'text' : 'password' }}" placeholder="Mật khẩu" autocomplete="password" class="input" aria-required="true" aria-invalid="false">
+              <span class="is-absolute input-icon cursor-pointer">
+                <mat-icon (click)="clickShowPassword()">{{ isShowPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
               </span>
               <span><!----> <!----></span>
+            </div>
+            <div class="field-error" *ngIf="validateControl('password')">
+              Mật khẩu chưa hợp lệ.
             </div>
           </div>
           <div class="input-group is-block">
@@ -56,18 +68,23 @@
               <span class="bold">Xác nhận mật khẩu mới</span>
             </label>
             <div class="input-group__icon is-relative">
-              <input name="new_password_confirm" placeholder="Xác nhận mật khẩu mới" type="password" class="input" aria-required="false" aria-invalid="false">
-              <span class="is-absolute input-icon">
-                <mat-icon>lock_open</mat-icon>
+              <input formControlName="newPasswordConfirm" placeholder="Xác nhận mật khẩu mới" type="{{ isShowNewPasswordConfirm ? 'text' : 'password' }}" class="input" aria-required="false" aria-invalid="false">
+              <span class="is-absolute input-icon cursor-pointer">
+                <mat-icon (click)="clickShowNewPasswordConfirm()">{{ isShowNewPasswordConfirm ? 'visibility' : 'visibility_off' }}</mat-icon>
               </span>
               <span><!----> <!----></span>
             </div>
+            <div class="field-error" *ngIf="validateControl('newPasswordConfirm')">
+              Mật khẩu xác nhận không hợp lệ.
+            </div>
           </div>
+        </div>
+        <div class="mt-4">
+          <button type="submit" class="account__btn btn btn-grad--primary btn--shadow btn--md btn--radius btn--full bold">Đăng ký</button>
         </div>
       </div>
     </div>
     <div class="account__body">
-      <button type="submit" class="account__btn btn btn-grad--primary btn--shadow btn--md btn--radius btn--full bold">Đăng ký</button>
       <div class="center-xs">
         Bạn đã có tài khoản Homestay?
         <span class="color-m bold" style="cursor: pointer;"><a routerLink="/app/auth/login">Đăng nhập</a></span>

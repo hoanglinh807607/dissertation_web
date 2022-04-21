@@ -1,0 +1,22 @@
+@keyframes example {
+  0% {background: linear-gradient(90deg, #197aac 0,#33a8eb 100%, #197aac);}
+  10% {background: linear-gradient(90deg, #197aac 0,#33a8eb 90%, #197aac);}
+  20% {background: linear-gradient(90deg, #197aac 0,#33a8eb 80%, #197aac);}
+  30% {background: linear-gradient(90deg, #197aac 0,#33a8eb 70%, #197aac);}
+  40% {background: linear-gradient(90deg, #197aac 0,#33a8eb 60%, #197aac);}
+  50% {background: linear-gradient(90deg, #197aac 0,#33a8eb 50%, #197aac);}
+  60% {background: linear-gradient(90deg, #197aac 0,#33a8eb 40%,  #197aac);}
+  70% {background: linear-gradient(90deg, #197aac 0,#33a8eb 30%,  #197aac);}
+  100% {background: linear-gradient(90deg, #197aac 0,#33a8eb 10%,  #197aac);}
+}
+@keyframes example-a {
+  0% {background: linear-gradient(90deg, #197aac 0,#33a8eb 0%, #197aac);}
+  10% {background: linear-gradient(90deg, #197aac 0,#33a8eb 15%, #197aac);}
+  20% {background: linear-gradient(90deg, #197aac 0,#33a8eb 20%, #197aac);}
+  30% {background: linear-gradient(90deg, #197aac 0,#33a8eb 25%, #197aac);}
+  40% {background: linear-gradient(90deg, #197aac 0,#33a8eb 30%, #197aac);}
+  50% {background: linear-gradient(90deg, #197aac 0,#33a8eb 35%, #197aac);}
+  60% {background: linear-gradient(90deg, #197aac 0,#33a8eb 40%,  #197aac);}
+  70% {background: linear-gradient(90deg, #197aac 0,#33a8eb 45%,  #197aac);}
+  100% {background: linear-gradient(90deg, #197aac 0,#33a8eb 50%,  #197aac);}
+}

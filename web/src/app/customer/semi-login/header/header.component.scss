@@ -11,20 +11,19 @@
     top: 0;
     z-index: 6;
     background-color: $color-white-background;
-    padding: 0.5rem 3% 1.5rem;
+    padding: 1rem 3%;
 
     .logo {
-      display: flex;
-      justify-content: left;
-      cursor: pointer;
       a {
         display: flex;
         position: relative;
-        left: -20px;
         font-weight: 700;
-      }
-      img {
-        width: 7rem;
+        width: 160px;
+        height: 90px;
+
+        img {
+          width: 100%;
+        }
       }
       span {
         position: relative;
@@ -35,13 +34,13 @@
       }
     }
     .search-box {
-      box-shadow: 1px 1px 2px 3px $color-white-background;
+      box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
       background-color: $color-white;
       border-radius: 5px;
       height: 46px;
       position: relative;
       width: 70%;
-      top: 5px;
+      top: 14px;
       ul {
         display: flex;
         padding: 0;
@@ -109,7 +108,7 @@
       }
     }
     .menu-mobile {
-      padding: 23px 0 10px 20px;
+      padding: 47px 0 10px 20px;
       cursor: pointer;
       color: $color-black;
 
@@ -118,28 +117,9 @@
       }
     }
   }
-  .background-login {
-    background-color: $color-black;
-    .menu {
-      >ul{
-        >li{
-          &:hover {
-            color: $color-white;
-          }
-          &:last-child:hover {
-            color: $main-color-hover;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-    .menu-mobile {
-      color: $color-white;
-    }
-  }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@media (min-width: 992px) {
+@media (min-width: 1100px) {
   .container-nav {
     .header {
       display: flex;
@@ -151,15 +131,15 @@
       top: 0;
       z-index: 6;
       background-color: $color-white-background;
-      padding: 0.5rem 3% 1.5rem;
+      padding: 1rem 3%;
       .logo {
-        width: 40%;
+        flex: 1;
       }
       .menu {
+        flex: 3;
         ul {
           display: flex;
           position: relative;
-          top: 5px;
           list-style: none;
           margin: 0;
           >li {
@@ -179,7 +159,6 @@
             }
             &:last-child {
               position: relative;
-              top: -5px;
             }
             &:hover {
               color: $main-color-hover;
@@ -190,40 +169,35 @@
       .profile {
         background-color: $color-input-style-border;
         border-radius: 30px;
-        padding: 0 10px;
+        width: 240px;
+        max-height: 50px;
 
         img{
-          margin-bottom: 4px;
+          border-radius: 50%;
+          position: absolute;
+          top: 12px;
+          left: 10px;
         }
         .dropdown-profile {
-          margin-bottom: 6px;
+          padding-left: 50px;
+        }
+        .btn-profile {
+          position: relative;
+          top: -2px;
+          width: 100%;
+          height: 50px;
+          border-radius: 50px;
         }
       }
       .search-box {
-        width: 100% !important;
+        flex: 2;
         margin-left: 10px;
+        margin-bottom: 32px;
         position: relative;
         top: 20px;
+        box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
         .search-field {
           margin-right: 15px;
-        }
-      }
-    }
-    .background-login {
-      background-color: $color-black;
-      .menu {
-        >ul{
-          >li{
-            a {
-              color: $color-white;
-              &:hover {
-                color: $main-color-hover;
-              }
-            }
-            &:last-child {
-              color: $color-black;
-            }
-          }
         }
       }
     }

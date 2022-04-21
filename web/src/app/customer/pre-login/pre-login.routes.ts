@@ -9,6 +9,7 @@ export const routes: Routes = [
     path: '',
     component: LayoutLoginComponent,
     children: [
+      {path: '', redirectTo: 'login', pathMatch: 'pull', component: LoginComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'recovery-password', component: ForgotPasswordComponent},

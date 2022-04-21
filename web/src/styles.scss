@@ -16,6 +16,7 @@
 @import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
 @import "../node_modules/material-design-icons/iconfont/material-icons.css";
 @import "../node_modules/angular-bootstrap-md/assets/scss/mdb.scss";
+@import "../src/assets/css/animation/animation";
 
 
 .pointer {
@@ -25,7 +26,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: 'gilroyregular';
+  font-family: 'gilroyregular', serif;
 }
 
 input,
@@ -33,7 +34,7 @@ button,
 select,
 optgroup,
 textarea {
-  font-family: 'gilroyregular';
+  font-family: 'gilroyregular', serif;
 }
 
 .ngx-pagination .pagination-previous a::before,
@@ -64,7 +65,7 @@ textarea {
 }
 
 .btn-admin {
-  background: transparent linear-gradient(180deg, #31bfde 0%, #25b2d1 100%) 0% 0% no-repeat padding-box !important;
+  background: transparent linear-gradient(180deg, #46c4e7 0%, #0dc0ec 100%) 0% 0% no-repeat padding-box !important;
   box-shadow: 0px 1px 2px #00000029 !important;
   border: 1px solid #1da9c7 !important;
   border-radius: 100px !important;
@@ -899,7 +900,15 @@ mat-form-field.form-element {
 p {
   font-size: 1.125rem;
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// /app/auth customer
+//////////////////////////////////////////////////////////////////////////////////////////////////// Modal
+.modal-footer {
+  border: none !important;
+  font-family: 'gilroymedium';
+  display: inline-block !important;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////// /app/auth customer
 .account__title {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -922,13 +931,13 @@ input:focus {
 .account__body>* {
   margin-top: 2rem;
 }
-input:not(.input--square), select:not(.input--square), textarea:not(.input--square) {
+input:not(.input--square) {
   border-radius: 3rem;
 }
 input, textarea {
   padding: .5rem 1.25rem;
 }
-input, select, textarea {
+.input {
   height: 3rem;
   border: 1px solid #e6e6e6;
   transition: all .3s;
@@ -958,28 +967,7 @@ input, select, textarea {
 .btn--shadow {
   box-shadow: 0 4px 12px 0 rgb(246 116 57 / 40%);
 }
-@keyframes example {
-  0% {background: linear-gradient(90deg, #197aac 0,#33a8eb 100%, #197aac);}
-  10% {background: linear-gradient(90deg, #197aac 0,#33a8eb 90%, #197aac);}
-  20% {background: linear-gradient(90deg, #197aac 0,#33a8eb 80%, #197aac);}
-  30% {background: linear-gradient(90deg, #197aac 0,#33a8eb 70%, #197aac);}
-  40% {background: linear-gradient(90deg, #197aac 0,#33a8eb 60%, #197aac);}
-  50% {background: linear-gradient(90deg, #197aac 0,#33a8eb 50%, #197aac);}
-  60% {background: linear-gradient(90deg, #197aac 0,#33a8eb 40%,  #197aac);}
-  70% {background: linear-gradient(90deg, #197aac 0,#33a8eb 30%,  #197aac);}
-  100% {background: linear-gradient(90deg, #197aac 0,#33a8eb 10%,  #197aac);}
-}
-@keyframes example-a {
-  0% {background: linear-gradient(90deg, #197aac 0,#33a8eb 0%, #197aac);}
-  10% {background: linear-gradient(90deg, #197aac 0,#33a8eb 15%, #197aac);}
-  20% {background: linear-gradient(90deg, #197aac 0,#33a8eb 20%, #197aac);}
-  30% {background: linear-gradient(90deg, #197aac 0,#33a8eb 25%, #197aac);}
-  40% {background: linear-gradient(90deg, #197aac 0,#33a8eb 30%, #197aac);}
-  50% {background: linear-gradient(90deg, #197aac 0,#33a8eb 35%, #197aac);}
-  60% {background: linear-gradient(90deg, #197aac 0,#33a8eb 40%,  #197aac);}
-  70% {background: linear-gradient(90deg, #197aac 0,#33a8eb 45%,  #197aac);}
-  100% {background: linear-gradient(90deg, #197aac 0,#33a8eb 50%,  #197aac);}
-}
+
 .btn-grad--primary {
   background: linear-gradient(90deg, $main-color-hover 0, $main-color 50%, $main-color-hover);
   background-size: 200% auto;
@@ -1047,14 +1035,77 @@ mb--18 {
 .p--small {
   font-size: 16px!important;
 }
-.f-size-20 {
+.p-lf-10 {
+  padding: 0 10px;
+}
+.font-8 {
+  font-size: 8px;
+}
+.font-10 {
+  font-size: 10px;
+}
+.font-11 {
+  font-size: 11px;
+}
+.font-12 {
+  font-size: 12px;
+}
+.font-13 {
+  font-size: 13px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-15 {
+  font-size: 15px;
+}
+.font-16 {
+  font-size: 16px!important;
+}
+.font-17 {
+  font-size: 17px!important;
+}
+.font-18 {
+  font-size: 18px!important;
+}
+.font-19 {
+  font-size: 19px!important;
+}
+.font-20 {
   font-size: 20px!important;
 }
-.f-size-22 {
+.font-21 {
+  font-size: 21px!important;
+}
+.font-22 {
   font-size: 22px!important;
 }
-.f-size-25 {
-  font-size: 25px!important;
+.font-23 {
+  font-size: 23px;
+}
+.font-24 {
+  font-size: 24px;
+}
+.font-25 {
+  font-size: 25px;
+}
+.font-26 {
+  font-size: 26px;
+}
+.font-27 {
+  font-size: 27px;
+}
+.font-28 {
+  font-size: 28px;
+}
+.font-29 {
+  font-size: 29px;
+}
+.font-30 {
+  font-size: 30px;
+}
+.font-36 {
+  font-size: 36px;
 }
 .bold, .coupon__action, .coupon__code {
   font-weight: 700;
@@ -1063,7 +1114,10 @@ mb--18 {
   color: #999!important;
 }
 .color-m {
-  color: $main-color;
+  color: $main-color!important;
+  &:hover {
+    color: $main-color-hover!important;
+  }
 }
 .c-alert {
   color: #f65e39!important;
@@ -1092,7 +1146,7 @@ mb--18 {
 }
 
 
-@media (min-width: 992px) {
+@media (min-width: 1100px) {
   .container {
     max-width: 1290px;
   }
@@ -1104,3 +1158,109 @@ mb--18 {
   }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////---------------common
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.width-300 {
+  width: 300px;
+}
+.width-80 {
+  width: 80px;
+}
+.width-50 {
+  width: 50px;
+}
+.max-width {
+  width: 100%;
+}
+.button-disabled {
+  opacity: 0.65 !important;
+  cursor: not-allowed !important;
+}
+.input-disabled {
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+.div-relative {
+  position: relative;
+}
+.div-absolute {
+  position: absolute;
+}
+.dis-grid {
+  display: grid;
+}
+.dis-flex {
+  display: flex;
+}
+.height-zero {
+  height: 0px !important;
+}
+.border-none {
+  border: none !important;
+}
+.justify-center {
+  justify-content: center;
+}
+.ellipsis-one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ellipsis-two-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.cursor-default-opacity {
+  cursor: default !important;
+  opacity: 0.6;
+}
+.display-none {
+  display: none;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+.word-wrap-break-word {
+  word-wrap: break-word;
+}
+.cursor-wait-prevent-click {
+  cursor: wait;
+  pointer-events: none;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.text-hover-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.text-underline {
+  text-decoration: underline !important;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.field-error {
+  color: red;
+}
+form {
+  .ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+}

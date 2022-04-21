@@ -11,4 +11,4 @@ import {CommonModule} from '@angular/common';
   exports: [
   ]
 })
-export class SharedModule { }
+export class ShareModule { }

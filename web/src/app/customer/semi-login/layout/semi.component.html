@@ -2,7 +2,7 @@
   <mat-sidenav #drawer mode="over">
     <div class="menu-mobile">
       <div class="close">
-        <mat-icon class="icon-clear" (click)="drawer.toggle()">clear</mat-icon>
+        <mat-icon  (click)="drawer.toggle()">clear</mat-icon>
       </div>
       <ul>
         <li><a routerLink="/app/auth/login" routerLinkActive="active">Chủ nhà</a></li>
@@ -11,15 +11,15 @@
         <li>
           <div class="profile">
             <!--                <img style="border-radius: 50%;"  class="mr-2" [src]="user.profilePicture ? user.profilePicture : 'assets/images/no_avatar.png'" width="64" height="64" alt="avatar" />-->
-            <img style="border-radius: 50%" class="mr-2" [src]="profilePicture ? profilePicture : '/assets/images/login/no_avatar.png'" width="40" height="40" alt="avatar" />
-            <button class="p-0 dropdown-profile" mat-button [matMenuTriggerFor]="menu">
+            <button class="dropdown-profile btn-profile" mat-button [matMenuTriggerFor]="menu">
+              <img style="border-radius: 50%" class="mr-2" [src]="profilePicture ? profilePicture : '/assets/images/login/no_avatar.png'" width="40" height="40" alt="avatar" />
               <div class="d-inline-block">
-                <div class="bold">Nguyễn Hoàng Linh</div>
+                <div class="username">Nguyễn Hoàng Linh</div>
               </div>
               <mat-icon>expand_more</mat-icon>
             </button>
             <mat-menu #menu="matMenu" class="right-menu-action">
-              <ng-container *ngFor="let item of menuProfiles;">
+              <ng-container *ngFor="let item of menuProfiles">
                 <button (click)="navigateUrl(item.path)" mat-menu-item>
                   <mat-icon>{{item.icon}}</mat-icon>
                   <span>{{item.name}}</span>

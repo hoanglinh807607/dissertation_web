@@ -69,7 +69,7 @@ export class BaseService {
       data = bodyString;
     }
 
-    return this.http.post(Constants.gatewayUrl + `${apiUrl}`, data, {headers: header}).pipe(
+    return this.http.post(`${apiUrl}`, data, {headers: header}).pipe(
       map((response: any) => {
         return response;
       }),

@@ -12,6 +12,10 @@ export class UserModel implements Deserializable {
   birthDate?: string;
   profilePicture?: string;
   introduceYourself?: string;
+  fullNameCardOwner: string;
+  cardNumber: string;
+  cardCreateDate: string;
+  cardPictures: string[];
   isLocked?: boolean;
   isDeleted?: boolean;
   createAt?: string;

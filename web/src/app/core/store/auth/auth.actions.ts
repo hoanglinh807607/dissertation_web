@@ -8,7 +8,7 @@ export const LOGIN_FAIL = '@auth/LoginFail';
 export const AUTH_UPDATE = '@auth/UpdateUserInfo';
 
 // Tạo ra các action director
-export const login = createAction(LOGIN, props<{userLogin: UserModel}>());
+export const login = createAction(LOGIN);
 export const loginSuccess = createAction(LOGIN_SUCCESS, props<{userLogin: UserModel}>());
 export const loginFail = createAction(LOGIN_FAIL, props<{error?: string}>());
 export const authUpdate = createAction(AUTH_UPDATE, props<{userLogin: UserModel}>());

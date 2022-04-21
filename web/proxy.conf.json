@@ -1,0 +1,9 @@
+{
+  "/rest": {
+    "target": "http://endpoint.com:8762/package/",
+    "pathRewrite": {
+      "^/rest": ""
+    },
+    "secure": false
+  }
+}

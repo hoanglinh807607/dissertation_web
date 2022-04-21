@@ -5,6 +5,8 @@ import { LayoutPostLoginComponent } from './layout-post-login/layout-post-login.
 import {RouterModule} from '@angular/router';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {routes} from './semi-routing.route';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -16,7 +18,9 @@ import {routes} from './semi-routing.route';
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatMenuModule,
+    MatIconModule
   ]
 })
 export class SemiLoginModule { }

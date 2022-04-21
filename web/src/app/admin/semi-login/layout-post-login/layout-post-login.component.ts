@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-layout-post-login',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutPostLoginComponent implements OnInit {
 
-  constructor() { }
+  profilePicture = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  navigateUrl(url: string) {
+    this.router.navigate([url]);
+  }
 }
