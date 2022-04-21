@@ -1,0 +1,182 @@
+<div class="profile-component">
+  <div class="container">
+    <div class="body">
+      <header class="mb-4">
+        <h3 class="header-setting-text">Cài đặt tài khoản</h3>
+        <div class="header-name">Nguyễn Hoàng Linh, nhlinh15181110@gmail.com</div>
+      </header>
+      <section class="profile">
+        <form action="" class="form">
+          <div class="content">
+            <div class="profile-picture">
+              <div class="picture-content">
+                <div class="picture-image mb-3">
+                  <img src="{{ oldImage }}" alt="" *ngIf="oldImage">
+                  <img src="{{ newImage }}" alt="" *ngIf="newImage">
+                  <button type="button" class="btn btn-update-image" (click)="onUpload()">
+                    <mat-icon>camera_alt</mat-icon> Chỉnh sửa
+                  </button>
+                  <input type="file" #profileRef style="display: none" accept="image/*"
+                         formControlName="profilePicture" (change)="fileChangeEvent($event)">
+                </div>
+                <h4 class="text-capitalize mb-3">Nguyễn Hoàng Linh</h4>
+                <div class="picture-email">nhlinh15181110@gmail.com</div>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="info-header">
+                <h3>Thông tin cá nhân</h3>
+                <span class="text-1">Cá nhân hóa tài khoản bằng việc cập nhật thông tin của bạn</span>
+              </div>
+              <hr>
+              <div class="info-content">
+                <div class="row">
+                  <div class="col-6">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>HỌ VÀ TÊN</mat-label>
+                      <input matInput maxlength="20" placeholder="Họ và tên" formControlName="fullName" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.fullName }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-6">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>SỐ ĐIỆN THOẠI</mat-label>
+                      <input matInput maxlength="20" placeholder="Số điện thoại" formControlName="phoneNumber" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.phoneNumber }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-6">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>Giới tính</mat-label>
+                      <mat-select formControlName="gender" [errorStateMatcher]="matcher">
+                        <mat-option *ngFor="let option of genderList" [value]="option">
+                          {{option.label}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-6">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>NGÀY SINH</mat-label>
+                      <input matInput bsDatepicker maxlength="20" placeholder="MM/DD/YYYY" formControlName="birthDate" autocomplete="off">
+                      <mat-error>
+                        {{ formErrors.birthDate }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>ĐỊA CHỈ EMAIL</mat-label>
+                      <input matInput maxlength="20" placeholder="Địa chỉ email" formControlName="emailAddress" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.emailAddress }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>ĐỊA CHỈ NƠI Ở</mat-label>
+                      <input matInput maxlength="20" placeholder="Địa chỉ nơi ở" formControlName="address" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.address }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>GIỚI THIỆU BẢN THÂN</mat-label>
+                      <textarea matInput formControlName="introduceYourself" placeholder="Giới thiệu bản thân"></textarea>
+                      <mat-error>
+                        {{ formErrors.introduceYourself }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12 mb-3">CMND/CĂN CƯỚC</div>
+                  <div class="col-6">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>HỌ VÀ TÊN CHỦ THẺ</mat-label>
+                      <input matInput maxlength="20" placeholder="Họ và tên chủ thẻ" formControlName="fullNameCardOwner" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.fullNameCard }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-6">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>SỐ CMND/CĂN CƯỚC</mat-label>
+                      <input matInput placeholder="Số cmnd/căn cước" formControlName="cardNumber" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.cardNumber }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-12">
+                    <mat-form-field class="form-element" appearance="fill">
+                      <mat-label>NGÀY CẤP</mat-label>
+                      <input matInput bsDatepicker placeholder="MM/DD/YYYY" formControlName="cardCreateDate" autocomplete="off" [errorStateMatcher]="matcher">
+                      <mat-error>
+                        {{ formErrors.cardCreateDate }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 form-element">
+                      <div>ẢNH CMND/CĂN CƯỚC</div>
+                      <div class="image-card" gallerize>
+                        <div class="list-image-wrap" *ngFor="let urlCard of listUrlCard; let i = index">
+                          <div class="list-img">
+                            <img [src]="urlCard" alt="">
+                            <div class="remove-picture-card" (click)="removePicture(i)">X</div>
+                          </div>
+                        </div>
+                        <div class="list-image-wrap">
+                          <div class="file-uploads">
+                            <div class="img-plus">
+                              <span></span>
+                            </div>
+                            <label for="identification_images"></label>
+                            <input type="file" class="display-none" (change)="previewImage($event)" id="identification_images" multiple>
+                          </div>
+                        </div>
+                      </div>
+                      <div *ngIf="uploadFailedMsg" class="error-msg">{{uploadFailedMsg}}</div>
+                    </div>
+                    <hr/>
+                  </div>
+                  <div class="row footer-form">
+                    <div class="col">
+                      <button type="submit" class="btn btn-admin mr-3 font-18">Lưu cài đặt</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+<ng-template #uploadFileModalRef>
+  <div class="modal-header p-0">
+    <h4 class="modal-title" id="modal-basic-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeImageUploadModal()">
+      <span aria-hidden="true" style="font-size: 30px">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" format="png"
+                   (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" [resizeToWidth]="480" [resizeToHeight]="480"
+                   (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+    <img *ngIf="croppedImage" [src]="croppedImage" width="150px" height="160px" />
+  </div>
+  <div class="modal-footer pt-0 text-right w-100">
+    <button type="submit" (click)="uploadImg()" class="btn-upload">
+      Cập nhật
+    </button>
+  </div>
+</ng-template>

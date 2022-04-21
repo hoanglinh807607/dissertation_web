@@ -1,0 +1,15 @@
+<div class="modal-content close-dialog-component">
+  <button type="button" class="close left-arrow">
+    <i class="fa fa-times" (click)="bsModalRef.hide()"></i>
+  </button>
+  <div class="text-center text-capitalize font-weight-bold font-20 no-capitalize">{{ title }}</div>
+  <div class="modal-body">
+    <div [innerHTML]="content" class="mt-3 mb-3 text-center font-19"></div>
+  </div>
+  <div class="text-center btn-close-dialog">
+    <button (click)="onClickClose()" class="btn btn-default text-uppercase line-height" type="button">
+      <span *ngIf="okButton">{{okButton}}</span>
+      <span *ngIf="!okButton">Đồng ý</span>
+    </button>
+  </div>
+</div>

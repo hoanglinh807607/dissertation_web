@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { authFeatureKey } from \"./auth.reduce\";\nimport { createFeatureSelector, createSelector } from \"@ngrx/store\";\nconst getAuth = createFeatureSelector(authFeatureKey);\nexport const getState = createSelector(getAuth, state => state);\nexport const authQuery = {\n  getAuth,\n  getState\n};","map":null,"metadata":{},"sourceType":"module"}

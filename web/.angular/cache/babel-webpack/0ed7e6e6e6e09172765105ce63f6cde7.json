@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class MyErrorStateMatcher {\n  isErrorState(control, form) {\n    const isSubmitted = form && form.submitted;\n    return !!(control && control.invalid && isSubmitted);\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { Subject } from \"rxjs\";\nexport class Destroyable {\n  constructor() {\n    this.destroy$ = new Subject();\n  }\n\n  ngOnDestroy() {\n    this.destroy$.next('');\n    this.destroy$.complete();\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

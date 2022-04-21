@@ -1,0 +1,20 @@
+.close-dialog-component {
+  font-size: 20px;
+  padding: 40px 20px;
+  .modal-body {
+    word-break: break-word;
+  }
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    outline: none;
+  }
+  .btn-close-dialog {
+    padding: 10px;
+  }
+  .line-height {
+    height: 44px;
+    line-height: 27px;
+  }
+}
